@@ -13,7 +13,8 @@ var getData = function() {
   $.ajax(SERVER_URL + '?order=-createdAt', {
     contentType: 'application/json',
     success: function(data) {
-      processData(data); // eslint-disable-line no-use-before-define
+      processData(data); 
+      console.log('Success!', data);  // eslint-disable-line no-use-before-define
     },
     error: function(data) {
       $('#error').prepend(' oh no').append('!');
@@ -121,3 +122,23 @@ var postData = function(message, username) {
     }
   });
 };
+
+
+var sendData = function (message , username ){
+   $.ajax({
+    url: SERVER_URL,
+    contentType: 'application/json',
+    type: 'POST',
+    data: JSON.stringify({
+      username: username,
+      text: message
+    }),
+    success : function (data){
+      console.log('Success!', data)
+    }
+       error: function(data) {
+      console.log(data);
+    }
+
+      });
+}
