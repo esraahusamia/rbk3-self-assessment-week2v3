@@ -19,6 +19,9 @@ var retrieve = function(key) {
   return array[hash];
 };
 
+ // -This function has [O(n) time complexity], because [for loop itrate over all element]
+
+
 
 // Problem 2: sortedArrayContainsItem with regard to the length of the passed-in array
 
@@ -36,6 +39,10 @@ var sortedArrayContainsItem = function(array, item) {
   return sortedArrayContainsItem(halfOfArray, item);
 };
 
+ // -This function has [O(log(n)) time complexity], because [there is recursive function]
+
+
+
 
 // Problem 3: hasDuplicates with regard to the length of the passed in array
 
@@ -52,3 +59,5 @@ var hasDuplicates = function(array) {
   }
   return false;
 };
+ /* -This function has [O(n^2) time complexity], because [index of is function that search for an element 
+  has complexity O(n) inside for loop that itrate over all element in an array ]*/
