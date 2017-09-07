@@ -14,7 +14,7 @@ var getData = function() {
     contentType: 'application/json',
     success: function(data) {
       processData(data); 
-      console.log('Success!', data);  // eslint-disable-line no-use-before-define
+       // eslint-disable-line no-use-before-define
     },
     error: function(data) {
       $('#error').prepend(' oh no').append('!');
@@ -105,7 +105,7 @@ var displayData = function(data, user) {
   });
 };
 
-var postData = function(message, username) {
+var postData = function(message, username) {// this is the function that send data to the server 
   $.ajax({
     url: SERVER_URL,
     contentType: 'application/json',
@@ -115,6 +115,7 @@ var postData = function(message, username) {
       text: message
     }),
     success: function(data) {
+      this.getDate()
       console.log('Success!', data);
     },
     error: function(data) {
@@ -124,21 +125,21 @@ var postData = function(message, username) {
 };
 
 
-var sendData = function (message , username ){
-   $.ajax({
-    url: SERVER_URL,
-    contentType: 'application/json',
-    type: 'POST',
-    data: JSON.stringify({
-      username: username,
-      text: message
-    }),
-    success : function (data){
-      console.log('Success!', data)
-    }
-       error: function(data) {
-      console.log(data);
-    }
+// var sendData = function (message , username ){
+//    $.ajax({
+//     url: SERVER_URL,
+//     contentType: 'application/json',
+//     type: 'POST',
+//     data: JSON.stringify({
+//       username: username,
+//       text: message
+//     }),
+//     success : function (data){
+//       console.log('Success!', data)
+//     }
+//        error: function(data) {
+//       console.log(data);
+//     }
 
-      });
+//       });
 }
