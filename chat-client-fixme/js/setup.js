@@ -115,7 +115,7 @@ var postData = function(message, username) {// this is the function that send da
       text: message
     }),
     success: function(data) {
-      this.getDate()
+      getDate()
       console.log('Success!', data);
     },
     error: function(data) {
